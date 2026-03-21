@@ -29,9 +29,9 @@ oldpeak = st.number_input("ST Depression Induced by Exercise", min_value=0.0, ma
 ROOT = Path(__file__).resolve().parent
 
 # Load the trained model, scaler and feature names
-model = joblib.load(ROOT / 'heart_disease_model.pkl')
-scaler = joblib.load(ROOT / 'scaler.pkl')
-feature_names = joblib.load(ROOT / 'feature_names.pkl')
+model = joblib.load(ROOT / 'models' / 'heart_disease_model.pkl')
+scaler = joblib.load(ROOT / 'models' / 'scaler.pkl')
+feature_names = joblib.load(ROOT / 'models' / 'feature_names.pkl')
 
 # input handler
 def process_input(input_df, feature_names):
