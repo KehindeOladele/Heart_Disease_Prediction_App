@@ -1,2 +1,14 @@
 # Created by venv; see https://docs.python.org/3/library/venv.html
-*
+# Ignore entire venv directories but track models folder
+Lib/
+Scripts/
+Include/
+pyvenv.cfg
+etc/
+share/
+*.exe
+*.pyc
+
+# Track models folder
+!models/
+!models/**
