@@ -78,18 +78,24 @@ if st.button("Predict"):
     st.write(f"Prediction: {'Heart Disease' if prediction == 1 else 'No Heart Disease'}")
     st.write(f"Probability of Heart Disease: {probability:.2f}")
 
-# Show feature importance analysis for each person
+# Show feature importance analysis for each person only contributing features that are relevant to the person
 if st.button("Person-Specific Feature Analysis"):
     processed_input = process_input(input_df, feature_names)
     importances = model.feature_importances_
     contribution = processed_input.iloc[0] * importances
+    # Filter out features that do not contribute
+    non_zero_mask = contribution != 0
+    contribution = contribution[non_zero_mask]
+    filtered_feature_names = [name for i, name in enumerate(feature_names) if non_zero_mask[i]]
     feature_contribution = pd.DataFrame({
-        'Feature': feature_names,
+        'Feature': filtered_feature_names,
         'Contribution': contribution
     }).sort_values(by='Contribution', ascending=False)
     st.write("Feature Contribution to Prediction:")
     st.dataframe(feature_contribution)
     plt.figure(figsize=(8, 6))
-    sns.barplot(feature_contribution, x='Contribution', y='Feature', orient='h')
+    #must be non-negative for pie chart, so we take absolute value of contribution
+    plt.pie(feature_contribution['Contribution'].abs(), labels=feature_contribution['Feature'], autopct='%1.1f%%')
     plt.title("Feature Contribution to Heart Disease Prediction")
     st.pyplot(plt)
+
