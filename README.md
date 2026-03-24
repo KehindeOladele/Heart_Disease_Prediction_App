@@ -9,15 +9,25 @@ An end-to-end machine learning system that predicts the likelihood of heart dise
 
 ## ✨ Features
 - **Individual Patient Diagnostics:** Toggle medical parameters (Age, Cholesterol, Resting BP) to receive an instant risk percentage.
+
+<img width="748" height="636" alt="image" src="https://github.com/user-attachments/assets/df9aa8a0-adcf-4dc9-b24a-138bcea53ea2" />
+
+<img width="883" height="640" alt="image" src="https://github.com/user-attachments/assets/d8edb98b-d94d-459c-8375-fa65fc9d6ee0" />
+
 - **Explainable AI (no zero-clutter):** Dynamic charts showing *exactly* which metrics pushed a patient's risk score up or down.
+
+<img width="341" height="193" alt="image" src="https://github.com/user-attachments/assets/84043555-6bc3-4056-bc41-3835c593c85b" />
+
+<img width="759" height="561" alt="image" src="https://github.com/user-attachments/assets/2ca70e02-2e95-4908-a692-ab3bf0c32c25" />
+
 - **Pre-processed Pipeline:** Seamlessly handles One-Hot Encoding and Standard Scaling behind the scenes.
 
 Want to run this app on your own computer? Follow these steps:
 
 1. Clone the repository
 
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
-cd YOUR_REPOSITORY_NAME
+git clone [https://github.com/KehindeOladele/Heart_Disease_Prediction_App.git](https://github.com/KehindeOladele/Heart_Disease_Prediction_App.git)
+cd Heart_Disease_Prediction_App
 
 2. Install dependencies
 
